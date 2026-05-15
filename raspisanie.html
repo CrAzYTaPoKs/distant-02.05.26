@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Расписание ГАПОУ СКиПТ</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Segoe UI,sans-serif;
+    }
+
+    body{
+      background:#f4f6fb;
+      padding:20px;
+      color:#222;
+    }
+
+    h1{
+      color:#0b4d94;
+      margin-bottom:25px;
+      font-size:32px;
+    }
+
+    /* ФИЛЬТРЫ */
+
+    .filters{
+      display:flex;
+      gap:15px;
+      flex-wrap:wrap;
+      margin-bottom:30px;
+    }
+
+    .filters select,
+    .filters input{
+      padding:12px;
+      border-radius:10px;
+      border:2px solid #dbe3ef;
+      min-width:180px;
+      background:white;
+    }
+
+    /* КАРТОЧКА ДНЯ */
+
+    .day-card{
+      background:white;
+      border-radius:18px;
+      padding:20px;
+      margin-bottom:25px;
+      box-shadow:0 4px 12px rgba(0,0,0,.06);
+    }
+
+    .day-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:18px;
+      border-bottom:2px solid #eef2f8;
+      padding-bottom:12px;
+    }
+
+    .date{
+      font-size:24px;
+      font-weight:700;
+      color:#0b4d94;
+    }
+
+    .weekday{
+      color:#777;
+      font-size:16px;
+    }
+
+    /* ТАБЛИЦА */
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      overflow:hidden;
+      border-radius:12px;
+    }
+
+    th{
+      background:#946f0b;
+      color:white;
+      padding:14px;
+    }
+
+    td{
+      padding:14px;
+      border-bottom:1px solid #edf1f7;
+      text-align:center;
+    }
+
+    tr:hover{
+      background:#f8fbff;
+    }
+
+    .pair{
+      font-weight:700;
+      color:#0b4d94;
+      width:70px;
+    }
+
+    .subject{
+      font-weight:600;
+    }
+
+    .group{
+      font-weight:700;
+    }
+
+    /* ТИПЫ */
+
+    .tag{
+      padding:6px 12px;
+      border-radius:8px;
+      font-size:13px;
+      font-weight:600;
+      display:inline-block;
+    }
+
+    .lecture{
+      background:#d9ecff;
+      color:#0b4d94;
+    }
+
+    .practice{
+      background:#dcf8e2;
+      color:#157347;
+    }
+
+    .up{
+      background:#fff0c7;
+      color:#8b6500;
+    }
+
+    /* АДАПТИВ */
+
+    @media(max-width:768px){
+
+      body{
+        padding:12px;
+      }
+
+      h1{
+        font-size:24px;
+      }
+
+      .filters{
+        flex-direction:column;
+      }
+
+      .filters select,
+      .filters input{
+        width:100%;
+      }
+
+      .day-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:5px;
+      }
+
+      table{
+        display:block;
+        overflow-x:auto;
+        white-space:nowrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Расписание ГАПОУ СКиПТ</h1>
+
+  ФИЛЬТРЫ 
+
+  <div class="filters">
+
+    <select>
+      <option>Все группы</option>
+      <option>ИСВ-21</option>
+    </select>
+
+    <input type="date">
+
+    <select>
+      <option>Все типы</option>
+      <option>Лекция</option>
+      <option>Практика</option>
+      <option>УП</option>
+    </select>
+
+  </div>
+
+   ДЕНЬ 
+
+  <div class="day-card">
+
+    <div class="day-header">
+      <div class="date">16.05.2026</div>
+      <div class="weekday">Суббота</div>
+    </div>
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>Пара</th>
+          <th>Группа</th>
+          <th>Предмет</th>
+          <th>Тип</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td class="pair">1</td>
+          <td class="group">ИСВ-21</td>
+          <td class="subject">
+            Проектирование и разработка интерфейсов
+          </td>
+          <td>
+            <span class="tag lecture">Лекция</span>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="pair">2</td>
+          <td class="group">ИСВ-21</td>
+          <td class="subject">
+            Проектирование и разработка интерфейсов
+          </td>
+          <td>
+            <span class="tag practice">Практика</span>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="pair">3</td>
+          <td class="group">ИСВ-21</td>
+          <td class="subject">УП 08</td>
+          <td>
+            <span class="tag up">УП</span>
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <!-- ВТОРОЙ ДЕНЬ -->
+
+  <div class="day-card">
+
+    <div class="day-header">
+      <div class="date">18.05.2026</div>
+      <div class="weekday">Понедельник</div>
+    </div>
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>Пара</th>
+          <th>Группа</th>
+          <th>Предмет</th>
+          <th>Тип</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td class="pair">1</td>
+          <td class="group">ИСВ-21</td>
+          <td class="subject">
+            Проектирование и дизайн
+          </td>
+          <td>
+            <span class="tag lecture">Лекция</span>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="pair">3</td>
+          <td class="group">ИСВ-21</td>
+          <td class="subject">
+            Архитектура программного обеспечения
+          </td>
+          <td>
+            <span class="tag practice">Практика</span>
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</body>
+</html>
